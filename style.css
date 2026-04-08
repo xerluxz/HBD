@@ -1,0 +1,50 @@
+
+    body {
+        font-family: 'Arial', sans-serif;
+        background-color: #d2e3f4; /* Darker background for contrast */
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+        margin: 0;
+        overflow: hidden; /* Prevents scrollbars during animation */
+        user-select: none;
+    }
+
+    h1 { font-size: 3rem; color: white; text-shadow: 2px 2px #9c9c9c; margin-bottom: 5px; }
+    
+    #counter { 
+        font-size: 5rem; 
+        font-weight: 900; 
+        color: #ffffff; 
+        text-shadow: 4px 4px #b8b8b8;
+        margin-bottom: 20px; 
+    }
+
+    #container { 
+        position: relative; 
+        cursor: pointer;
+        transition: transform 0.1s ease-out;
+    }
+
+    .cat-img {
+        max-width: 85vw;
+        max-height: 65vh;
+        object-fit: contain;
+        /* Default state */
+        filter: drop-shadow(0 10px 20px rgba(0,0,0,0.3));
+    }
+
+    #img-open { display: none; }
+
+    /* The Animation Class */
+    .pop-animation {
+        animation: squeeze 0.1s ease-in-out;
+    }
+
+    @keyframes squeeze {
+        0% { transform: scale(1); }
+        50% { transform: scale(1.1) rotate(2deg); } /* Grow and tilt */
+        100% { transform: scale(1); }
+    }
